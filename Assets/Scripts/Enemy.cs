@@ -60,11 +60,11 @@ public class Enemy : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
        
-        if (other.transform.tag == "Lazer")
+        if (other.transform.tag == "Lazer" && !_destroyed)
         {
             _audioSource.Play();
             Destroy(other.gameObject);
-            if (_Player != null || !_destroyed)
+            if (_Player != null)
             {
                 _Player.AddScore();
             }
