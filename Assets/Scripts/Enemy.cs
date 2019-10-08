@@ -64,7 +64,7 @@ public class Enemy : MonoBehaviour
         {
             _audioSource.Play();
             Destroy(other.gameObject);
-            if (_Player != null)
+            if (_Player != null || !_destroyed)
             {
                 _Player.AddScore();
             }
